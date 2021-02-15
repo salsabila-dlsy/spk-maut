@@ -23,6 +23,7 @@ switch($_GET['act'])
 							<tr>
 								<th>No</th>
 								<th>Nama</th>
+								<th>NIK</th>
 								<th>Alamat</th>
 								<th>Total Nilai</th>
 								<th>Aksi</th>
@@ -42,6 +43,7 @@ switch($_GET['act'])
 									<tr>
 										<td><?php echo $no; ?></td>
 										<td><?php echo $r2['nama']; ?></td>
+										<td><?php echo $r2['nik']; ?></td>
 										<td><?php echo $r2['alamat']; ?></td>
 										<?php
 										$id_penduduk=$r2['id_penduduk'];

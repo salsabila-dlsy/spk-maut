@@ -23,7 +23,7 @@ $nama = $_POST['nama'];
 
 if($g=='anggota')
 {
-    $sql="INSERT INTO dt_penduduk(nama,alamat) VALUES('$_POST[nama]','$_POST[alamat]')";
+    $sql="INSERT INTO dt_penduduk(nama,nik, alamat) VALUES('$_POST[nama]','$_POST[nik]', '$_POST[alamat]')";
     if (mysqli_query($config, $sql)){ 
         $max= mysqli_query($config, "SELECT MAX(id_penduduk) FROM dt_penduduk");
         $nilai = mysqli_fetch_array($max);
@@ -41,7 +41,7 @@ if($g=='anggota')
 else 
     if($g=='edit')
     {
-        mysqli_query($config,"UPDATE dt_penduduk SET nama='$_POST[nama]',alamat='$_POST[alamat]' WHERE id_penduduk='$_POST[id_penduduk]'");
+        mysqli_query($config,"UPDATE dt_penduduk SET nama='$_POST[nama]',nik='$_POST[nik]', alamat='$_POST[alamat]' WHERE id_penduduk='$_POST[id_penduduk]'");
          echo '<script LANGUAGE="JavaScript">
             alert("Anggota dengan nama :('.$_POST[nama].') Di Update")
             window.location.href="dashboard.php?page=penduduk";

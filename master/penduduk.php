@@ -26,6 +26,10 @@ switch($_GET['act'])
 								<input type="text" name="nama" class="form-control" placeholder="Enter..." autocomplete="off" required="">
 							</div>
 							<div class="col-md-12 form-group">
+								<label>NIK</label>
+								<input type="text" name="nik" class="form-control" placeholder="Enter..." autocomplete="off" required="">
+							</div>
+							<div class="col-md-12 form-group">
 								<label>Alamat</label>
 								<input type="text" name="alamat" class="form-control" placeholder="Enter..." autocomplete="off" required="">
 							</div>
@@ -45,6 +49,7 @@ switch($_GET['act'])
 						<tr>
 							<th>No</th>
 							<th>Nama</th>
+							<th>NIK</th>
 							<th>Alamat</th>
 							<th>Aksi</th>
 						</tr>
@@ -59,6 +64,7 @@ switch($_GET['act'])
 							<tr>
 								<td><?php echo $no; ?></td>
 								<td><?php echo $r['nama']; ?></td>
+								<td><?php echo $r['nik']; ?></td>
 								<td><?php echo $r['alamat']; ?></td>
 								<td>
 									<a href="?page=penduduk&act=ubah&id_penduduk=<?php echo $r['id_penduduk']; ?>" class="btn btn-info"><li class="fa fa-pencil"></li></a>
@@ -107,6 +113,10 @@ $r= mysqli_fetch_array($edit);
 								<input type=hidden name="id_penduduk" value="<?php echo $r['id_penduduk'];?>">	
 								<input type=text name="nama" class="form-control" value="<?php echo $r['nama'];?>" required/>
 							</div>	
+							<div class="col-md-12 form-group">
+								<label>NIK</label>
+								<input type=text name="nik" class="form-control"value="<?php echo $r['nik'];?>"  required/>
+							</div>
 							<div class="col-md-12 form-group">
 								<label>Alamat</label>
 								<input type=text name="alamat" class="form-control"value="<?php echo $r['alamat'];?>"  required/>
